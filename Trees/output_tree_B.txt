@@ -1,0 +1,77 @@
+feature 3(IG: 0.053199,Entropy: 0.953694)
+-- feature 3 = 0 --
+    feature 0(IG: 0.064703,Entropy: 0.789655)
+    -- feature 0 = 0 --
+        feature 2(IG: 0.122961,Entropy: 0.489779)
+        -- feature 2 = 0 --
+            leaf {1: 117}
+        -- feature 2 = 1 --
+            feature 1(IG: 0.301776,Entropy: 0.764205)
+            -- feature 1 = 0 --
+                feature 4(IG: 0.998846,Entropy: 0.998846)
+                -- feature 4 = 0 --
+                    leaf {0: 24}
+                -- feature 4 = 1 --
+                    leaf {1: 26}
+            -- feature 1 = 1 --
+                leaf {1: 58}
+    -- feature 0 = 1 --
+        feature 2(IG: 0.074023,Entropy: 0.938315)
+        -- feature 2 = 0 --
+            feature 1(IG: 0.996792,Entropy: 0.996792)
+            -- feature 1 = 0 --
+                leaf {1: 49}
+            -- feature 1 = 1 --
+                leaf {0: 56}
+        -- feature 2 = 1 --
+            feature 1(IG: 0.305770,Entropy: 0.767003)
+            -- feature 1 = 0 --
+                feature 4(IG: 0.999338,Entropy: 0.999338)
+                -- feature 4 = 0 --
+                    leaf {0: 32}
+                -- feature 4 = 1 --
+                    leaf {1: 34}
+            -- feature 1 = 1 --
+                leaf {1: 77}
+-- feature 3 = 1 --
+    feature 4(IG: 0.162068,Entropy: 0.999977)
+    -- feature 4 = 0 --
+        feature 2(IG: 0.004754,Entropy: 0.834421)
+        -- feature 2 = 0 --
+            feature 1(IG: 0.405073,Entropy: 0.887418)
+            -- feature 1 = 0 --
+                feature 0(IG: 0.964690,Entropy: 0.964690)
+                -- feature 0 = 0 --
+                    leaf {0: 36}
+                -- feature 0 = 1 --
+                    leaf {1: 23}
+            -- feature 1 = 1 --
+                leaf {1: 59}
+        -- feature 2 = 1 --
+            feature 0(IG: 0.324162,Entropy: 0.782992)
+            -- feature 0 = 0 --
+                leaf {1: 79}
+            -- feature 0 = 1 --
+                feature 1(IG: 0.999839,Entropy: 0.999839)
+                -- feature 1 = 0 --
+                    leaf {1: 33}
+                -- feature 1 = 1 --
+                    leaf {0: 34}
+    -- feature 4 = 1 --
+        feature 2(IG: 0.320998,Entropy: 0.841410)
+        -- feature 2 = 0 --
+            feature 0(IG: 0.000948,Entropy: 0.999039)
+            -- feature 0 = 0 --
+                feature 1(IG: 1.000000,Entropy: 1.000000)
+                -- feature 1 = 0 --
+                    leaf {1: 34}
+                -- feature 1 = 1 --
+                    leaf {0: 34}
+            -- feature 0 = 1 --
+                feature 1(IG: 0.996209,Entropy: 0.996209)
+                -- feature 1 = 0 --
+                    leaf {0: 32}
+                -- feature 1 = 1 --
+                    leaf {1: 37}
+        -- feature 2 = 1 --
+            leaf {0: 126}

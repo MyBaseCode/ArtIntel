@@ -1,0 +1,13 @@
+feature 0(IG: 0.116673,Entropy: 0.402179)
+-- feature 0 = 0 --
+    feature 1(IG: 0.321810,Entropy: 0.732067)
+    -- feature 1 = 0 --
+        leaf {1: 23}
+    -- feature 1 = 1 --
+        feature 2(IG: 1.000000,Entropy: 1.000000)
+        -- feature 2 = 0 --
+            leaf {1: 8}
+        -- feature 2 = 1 --
+            leaf {0: 8}
+-- feature 0 = 1 --
+    leaf {1: 61}

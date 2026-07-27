@@ -1,0 +1,162 @@
+\documentclass[conference,a4paper]{IEEEtran}
+\IEEEoverridecommandlockouts
+% The preceding line is only needed to identify funding in the first footnote. If that is unneeded, please comment it out.
+%Template version as of 6/27/2024
+
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\usepackage{booktabs}
+\usepackage{url}
+\def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
+    T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
+\begin{document}
+
+\title{Assignment 1 : Supervised Machine Learning %\\
+%{\footnotesize \textsuperscript{*}Note: Sub-titles are not captured for https://ieeexplore.ieee.org  and
+%should not be used}
+%\thanks{Identify applicable funding agency here. If none, delete this.}
+}
+
+\author{\IEEEauthorblockN{Renjiro Owen}
+\textit{Victoria University Wellington}\\
+Wellington, New Zealand\\
+owenrenj@myvuw.ac.nz}
+
+\maketitle
+
+\section{Decision Tree Method}
+
+\subsection{Results}
+
+The decision tree algorithm was trained using the rtg A, rtg B, and rtg C training dataset. 
+The generated decision tree was constructed using entropy-based Information Gain, 
+with a stopping threshold of $IG < 0.00001$.
+The overall training classification accuracy achieved was:
+
+\begin{equation}
+	Accuracy_{rtgA} = \text{100}\%
+\end{equation}
+
+\begin{equation}
+	Accuracy_{rtgB} = \text{100}\%
+\end{equation}
+
+\begin{equation}
+	Accuracy_{rtgC} = \text{100}\%
+\end{equation}
+
+The classification accuracy was calculated using:
+
+\begin{equation}
+	Accuracy = \frac{\text{Number of correctly classified instances}}
+	{\text{Total number of instances}}
+\end{equation}
+
+\subsection{Minimal Entropy}
+
+For each dataset, the feature resulting in the minimum entropy was identified by
+calculating the weighted entropy after splitting the entire training dataset on
+each available feature. The feature with the lowest resulting entropy represents
+the split that produces the purest separation of class labels and therefore
+provides the greatest reduction in uncertainty.
+
+For \textit{rtg A}, Feature 0 produced the minimum entropy value of 0.285506 with
+an Information Gain of 0.116673. Therefore, Feature 0 was selected as the root
+splitting feature of the generated decision tree. For \textit{rtg B}, Feature 3
+resulted in the lowest entropy value of 0.900495 with an Information Gain of
+0.053199, making it the most effective feature for the initial split. For
+\textit{rtg C}, Feature 3 achieved an entropy value of 0.000000 and an Information
+Gain of 0.904381, indicating that this feature completely separates the classes
+in the training dataset.
+
+These observations were made by comparing the entropy values obtained from all
+features. The feature with the smallest entropy (or equivalently the highest
+Information Gain) was considered the most informative feature and was chosen by
+the decision tree algorithm for splitting the dataset.
+
+\subsection{Unused Feature}
+The features utilized by the decision tree were different for each dataset. For
+\textit{rtg A}, Feature 3 was not used in constructing the decision tree. This
+occurred because the other features provided sufficient Information Gain to
+separate the classes, allowing the tree to reach pure leaf nodes before Feature
+3 was considered. Since the stopping criteria were satisfied once the nodes
+became sufficiently pure, Feature 3 did not contribute additional useful
+information for classification.
+
+For \textit{rtg B}, all available features were utilized in the construction of
+the decision tree. This indicates that each feature contributed useful
+information during the splitting process. The tree required all features to
+further separate the data until the stopping criteria were reached.
+
+For \textit{rtg C}, only Feature 3 was used in constructing the decision tree,
+while the remaining features were excluded. This was because Feature 3 provided
+a very strong separation of the classes, achieving an entropy of 0 and a high
+Information Gain of 0.904381. After splitting on Feature 3, the resulting nodes
+were already pure, meaning additional features were unnecessary. Therefore, the
+remaining features were not selected because they did not provide any further
+improvement to the classification.
+
+Overall, features were excluded from the tree-building process when they did not
+provide enough additional Information Gain or when previous splits had already
+produced pure leaf nodes. The decision tree only selects features that reduce
+class uncertainty and ignores redundant or unnecessary attributes.
+
+\subsection{Rtg C Discussion}
+\subsubsection{Generalisation Ability of the Generated Tree}
+
+The generated decision tree is not expected to perform well on unseen data. The
+tree structure indicates that Feature 3 alone is able to completely separate the
+training instances, resulting in a very simple tree where the split is entirely
+dependent on a single feature. Although this produces perfect classification
+performance on the training dataset, it may not generalise well to unseen data
+because the model relies heavily on Feature 3.
+
+If new instances contain feature values that were not represented in the training
+dataset, the tree may not have sufficient information from other features to make
+a reliable prediction. Therefore, the tree structure suggests a risk of poor
+generalisation due to its dependency on a single feature rather than learning
+patterns from multiple attributes.
+
+
+\subsubsection{Unused Features in Tree Construction}
+
+For the rtg C dataset, only Feature 3 was utilized in constructing the decision
+tree, while the remaining features were not selected. This occurred because
+Feature 3 provided a very strong separation between the two classes, achieving an
+entropy of 0 and a high Information Gain of 0.904381.
+
+Since splitting on Feature 3 resulted in pure leaf nodes, there was no need for
+the decision tree to consider additional features. The other attributes may
+contain useful information; however, their contribution was unnecessary after
+Feature 3 had already completely separated the training data. Therefore, these
+features were excluded because they did not provide additional Information Gain
+during the tree-building process.
+
+
+\subsubsection{Potential Preprocessing Improvements}
+
+Although a test dataset is not available, several preprocessing approaches could
+be considered to improve the generalisation ability of the generated tree.
+Firstly, Feature 3 could be investigated further because the tree's complete
+dependency on this single attribute may indicate that the dataset contains a
+dominant or potentially artificial feature. Removing Feature 3 before training
+could encourage the model to learn from other attributes and produce a more
+generalised decision boundary.
+
+Additionally, feature selection techniques could be applied to identify and
+retain informative attributes while reducing dependency on a single feature.
+Tree pruning or increasing the Information Gain stopping threshold could also be
+considered to prevent the tree from creating overly specific splits based only on
+the training data.
+
+These preprocessing steps may reduce overfitting and improve the ability of the
+decision tree to classify unseen instances.
+
+\bibliographystyle{IEEEtran}   % or plain, unsrt, apalike, etc.
+\bibliography{references}
+
+\end{document}
