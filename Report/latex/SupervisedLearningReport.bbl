@@ -21,18 +21,6 @@
 \providecommand{\BIBdecl}{\relax}
 \BIBdecl
 
-\bibitem{goodfellow2016}
-I.~Goodfellow, Y.~Bengio, and A.~Courville, \emph{Deep Learning}.\hskip 1em
-  plus 0.5em minus 0.4em\relax MIT Press, 2016.
-
-\bibitem{haykin2009}
-S.~Haykin, \emph{Neural Networks and Learning Machines}, 3rd~ed.\hskip 1em plus
-  0.5em minus 0.4em\relax Pearson, 2009.
-
-\bibitem{bishop2006}
-C.~M. Bishop, \emph{Pattern Recognition and Machine Learning}.\hskip 1em plus
-  0.5em minus 0.4em\relax Springer, 2006.
-
 \bibitem{chatgpt2026}
 {OpenAI}, ``{ChatGPT} (gpt-5.5),'' \url{https://chatgpt.com/}, 2026, large
   language model. Accessed: 2026-07-20.
